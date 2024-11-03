@@ -1,0 +1,115 @@
+/* Container for the form */
+.contact-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+    background-color: #ffffff;
+}
+
+.contact-component {
+    width: 60%; /* Adjust as needed */
+    max-width: 700px;
+    margin: auto;
+    padding: 2.5rem;
+    background-color: #dedede;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Form heading */
+.contact-heading {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-subtext {
+    color: #4b5563;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Wrapper for each label and input field */
+.contact-field-wrapper {
+    display: flex;
+    flex-direction: column; /* Stack label and input vertically */
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+/* Label */
+.contact-label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+/* Name inputs */
+.name-inputs-container {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+.input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #d1d5db;
+    background-color: #f9fafb;
+    border-radius: 0.5rem;
+    transition: border-color 0.3s ease;
+}
+
+.input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 5px rgba(99, 102, 241, 0.3);
+}
+
+.message-input {
+    height: 8rem; /* Adjust height for message box */
+}
+
+/* Submit button */
+.button {
+    width: 100%;
+    padding: 1rem;
+    font-weight: 700;
+    color: white;
+    background-color: #6366f1;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #4f46e5;
+}
+
+/* Status Messages */
+.success-message, .error-message {
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    margin-top: 1rem;
+}
+
+.success-message {
+    color: #166534;
+}
+
+.error-message {
+    color: #b91c1c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .contact-component {
+        width: 90%;
+    }
+    .name-inputs-container {
+        flex-direction: column; /* Stack name inputs vertically on small screens */
+    }
+}

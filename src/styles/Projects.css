@@ -1,0 +1,39 @@
+/* Removed unnecessary CSS */
+.projects-section {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+    margin: 0 auto;
+    padding: 3rem;
+    overflow: hidden;
+}
+
+.project-card {
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.show-more, .show-less {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s, transform 0.5s ease;
+}
+
+.show-more:hover, .show-less:hover {
+    background-color: #014b94;
+    transform: scale(1.05);
+}

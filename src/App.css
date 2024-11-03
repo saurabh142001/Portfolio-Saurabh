@@ -1,0 +1,79 @@
+/* Default (Dark Mode) Theme */
+:root {   
+  --background-color: linear-gradient(to bottom, #041E22, #171717); /* Updated gradient background */
+  --text-color: #ffffff; /* Dark text color */
+  --navbar-bg: #333; /* Dark navbar background */
+  --navbar-color: #ffffff; /* Dark navbar text color */
+  --card-bg: #022c2c; /* Dark mode card background */
+}
+
+/* Light Mode Theme */
+.light-mode {
+  --background-color: #ffffff; /* Light mode background */
+  --text-color: #011012; /* Light mode text color */
+  --navbar-bg: #f7ecd7; /* Navbar background in light mode */
+  --navbar-color: #011012; /* Navbar text color in light mode */
+  --card-bg: #BFC8C7; /* Light mode card background */
+}
+
+/* Apply global background and text colors */
+body {
+  background: var(--background-color); /* Use gradient for dark mode */
+  color: var(--text-color);
+  margin: 0;
+  font-family: "YourCustomFont", serif;
+ 
+ 
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: var(--navbar-bg);
+  color: var(--navbar-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  padding: 5px 10px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid var(--navbar-color);
+  color: var(--navbar-color);
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-toggle:hover {
+  background-color: #0073e6;
+  color: white;
+}
+
+.project-card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}.animated-gradient {
+  background: linear-gradient(45deg, #b20c28,#8a1786, #daa5ff,  #eb2f48, #ff7621, #ffef63);
+  background-size: 300% 300%;
+  animation: gradientAnimation 5s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* For Firefox */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

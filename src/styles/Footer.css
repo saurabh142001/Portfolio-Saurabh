@@ -1,0 +1,49 @@
+/* Footer Container Styling */
+.footer-container {
+    background-color: var(--background-color); /* Use CSS variable */
+    text-align: center;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    border-top: 2px solid #888888; /* Top border */
+}
+
+/* Centering and Layout Styling */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+}
+
+/* Social Media Section Styling */
+.social-media-section {
+    text-align: center;
+}
+
+/* Social Icons Styling */
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: #a7b7fc;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #4180ed; /* Light Gray */
+    transform: scale(1.1);
+}
+
+/* Responsive Styling */
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+    }
+}
+
+  
