@@ -90,15 +90,16 @@ const ContactForm = () => {
             ></textarea>
           </div>
 
-          <button type="submit" className="button">
-            Submit
+          {formStatus === "success"}
+
+          <button
+            type="submit"
+            className="button"
+            disabled={formStatus === "success"}
+          >
+            {formStatus === "success" ? "Submitted" : "Submit"}
           </button>
 
-          {formStatus === "success" && (
-            <div className="success-message">
-              Thank you! Your submission has been received!
-            </div>
-          )}
           {formStatus === "error" && (
             <div className="error-message">
               Oops! Something went wrong while submitting the form.

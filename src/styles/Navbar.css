@@ -1,5 +1,5 @@
 /* Basic styles for the navbar */
-.navbar {
+.navbar { border-bottom: 1px solid #888888; 
   background-color: var(--navbar-bg);
   color: var(--navbar-color);
   padding: 10px 20px;
@@ -11,6 +11,7 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
+ 
 }
 
 .logo {
@@ -63,7 +64,8 @@
     top: 60px;
     left: 0;
     right: 0;
-    background-color: var(--navbar-color);
+    background-color: var(--navbar-bg);
+  color: var(--navbar-color);
     padding: 20px 30px;
     border-radius: 10px;
     z-index: 10;
@@ -82,11 +84,12 @@
   background: transparent;
   border: 1px solid var(--navbar-color);
   color: var(--navbar-color);
+
   border-radius: 4px;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .theme-toggle:hover {
   background-color: #C2CBC8;
-  color: white;
+  color: rgb(0, 0, 0);
 }

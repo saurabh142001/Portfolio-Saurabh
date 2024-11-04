@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../styles/Navbar.css"; // Import your CSS file for styling
 import ToggleButton from "./Button"; // Import the ToggleButton component
 
-const Navbar = ({ toggleTheme, isDarkMode }) => {
+const Navbar = ({ toggleTheme, isDarkMode, openModal }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -31,11 +31,9 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
               Projects
             </a>
           </li>
-          <li>
-            <a href="#contact" onClick={toggleMenu}>
-              Contact
-            </a>
-          </li>
+          <a onClick={openModal} className="contact-button">
+            Contact Us
+          </a>
           <li>
             <a
               href="https://github.com/yourusername"

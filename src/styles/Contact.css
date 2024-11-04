@@ -3,40 +3,54 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    padding: 2rem;
     background-color: #ffffff;
 }
 
+.name-inputs-container {
+    display: flex;
+    gap: 1rem; /* Adds space between first and last name inputs */
+    width: 90%;
+}
+
+/* Each input in the name container will take equal space */
+.name-inputs-container .input {
+    width: 100%; /* Full width for each input */
+}
+
+/* Contact form container */
 .contact-component {
-    width: 60%; /* Adjust as needed */
-    max-width: 700px;
-    margin: auto;
-    padding: 2.5rem;
+    width: 100%;
+    max-width: 600px; /* Adjust for screen responsiveness */
+    padding: 20px;
     background-color: #dedede;
     border-radius: 1rem;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    position: relative; /* Added for absolute positioning of thank you message */
+    overflow: hidden; /* Prevents overflow */
 }
 
 /* Form heading */
 .contact-heading {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
 }
 
 .contact-subtext {
     color: #4b5563;
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 1.5rem;
 }
 
 /* Wrapper for each label and input field */
 .contact-field-wrapper {
     display: flex;
-    flex-direction: column; /* Stack label and input vertically */
+    flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     width: 100%;
 }
 
@@ -47,21 +61,16 @@
     color: #4b5563;
 }
 
-/* Name inputs */
-.name-inputs-container {
-    display: flex;
-    gap: 1rem;
-    width: 100%;
-}
-
+/* Input fields styling */
 .input {
-    width: 100%;
+    width: 100%; /* Use full width */
     padding: 0.75rem;
     font-size: 1rem;
     border: 1px solid #d1d5db;
     background-color: #f9fafb;
     border-radius: 0.5rem;
     transition: border-color 0.3s ease;
+    box-sizing: border-box;
 }
 
 .input:focus {
@@ -69,31 +78,37 @@
     box-shadow: 0 0 5px rgba(99, 102, 241, 0.3);
 }
 
+/* Text area styling for message */
 .message-input {
-    height: 8rem; /* Adjust height for message box */
+    height: 6rem; /* Adjust height for better fit */
+    resize: none;
 }
 
-/* Submit button */
+/* Submit button styling */
 .button {
-    width: 100%;
-    padding: 1rem;
+    width: 50%;
+    padding: 0.75rem;
     font-weight: 700;
     color: white;
-    background-color: #6366f1;
+    background-color: #011012;
+    
     border-radius: 0.5rem;
     transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
 .button:hover {
-    background-color: #4f46e5;
+    background-color: #185f5f;
 }
 
-/* Status Messages */
-.success-message, .error-message {
+/* Status messages */
+.success-message,
+.error-message {
     font-size: 1rem;
     padding: 0.5rem;
     border-radius: 0.25rem;
     margin-top: 1rem;
+    z-index: 100; /* Ensure messages are above other elements */
 }
 
 .success-message {
@@ -104,12 +119,98 @@
     color: #b91c1c;
 }
 
+/* Thank you message styling */
+.thank-you-message {
+    position: absolute; /* Position it relative to the contact component */
+    top: 10%; /* Adjust position upwards */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+    z-index: 1100; /* Ensure it is above other content */
+    font-size: 1.2rem; /* Size of the thank you message */
+    color: #4b5563; /* Color for the thank you message */
+    display: none; /* Hide by default, show when needed */
+}
+
 /* Responsive adjustments */
 @media (max-width: 640px) {
     .contact-component {
         width: 90%;
+        padding: 1.5rem;
     }
     .name-inputs-container {
-        flex-direction: column; /* Stack name inputs vertically on small screens */
+        flex-direction: column;
     }
+}
+
+/* Modal overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+/* Modal content */
+.modal-content {
+    position: relative;
+    max-width: 600px; /* Capped width for larger screens */
+    width: 65%;
+    max-height: 83vh; /* Cap height for smaller screens */
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Close button inside modal */
+.close-modal-button {
+    font-family: "YourCustomFont", serif;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: rgb(255, 0, 0);
+    background: none;
+    padding: 2px;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Open modal button on main page */
+.open-modal-button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    background-color: #A7B6FC;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.open-modal-button:hover {
+    background-color: #A7B6FC;
+}
+
+/* Blur background when modal is open */
+.blurred-background {
+    filter: blur(5px);
+}
+
+/* Pointer on interactive elements */
+.button,
+.open-modal-button,
+.close-modal-button,
+.modal-overlay {
+    cursor: pointer;
 }

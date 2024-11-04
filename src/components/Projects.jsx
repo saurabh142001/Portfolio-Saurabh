@@ -44,13 +44,13 @@ const Projects = () => {
       id: 6,
       title: "SJewels",
       description:
-        "  SJewels is an e-commerce platform for a jewelry store, currently in production. ",
+        "SJewels is an e-commerce platform for a jewelry store, currently in production.",
       link: "https://github.com/yourusername/SJewels",
     },
   ];
 
   const showMoreProjects = () => {
-    setVisibleProjects((prev) => prev + 3);
+    setVisibleProjects((prev) => Math.min(prev + 3, projects.length)); // Ensure it doesn't exceed total projects
   };
 
   const showLessProjects = () => {
@@ -64,7 +64,9 @@ const Projects = () => {
         {projects.slice(0, visibleProjects).map((project, index) => (
           <div
             key={project.id}
-            className={`project-card ${index >= 3 ? "fade-in" : ""}`}
+            className={`project-card ${
+              index < visibleProjects ? "visible" : ""
+            }`}
           >
             <h3>{project.title}</h3>
             <div className="project-description">

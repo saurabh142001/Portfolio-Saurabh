@@ -1,4 +1,3 @@
-/* Removed unnecessary CSS */
 .projects-section {
     text-align: center;
     padding: 2rem;
@@ -13,13 +12,21 @@
     margin: 0 auto;
     padding: 3rem;
     overflow: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Add transition here */
 }
 
 .project-card {
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Ensure card transitions are smooth */
+    opacity: 0; /* Start with cards hidden */
+    transform: translateY(10px); /* Slightly translate the cards down */
+}
+
+.project-card.visible { /* Class to apply when the card is visible */
+    opacity: 1; /* Fade in effect */
+    transform: translateY(0); /* Move back to original position */
 }
 
 .show-more, .show-less {
@@ -30,7 +37,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.5s, transform 0.5s ease;
+    transition: background-color 0.5s ease, transform 0.5s ease;
 }
 
 .show-more:hover, .show-less:hover {

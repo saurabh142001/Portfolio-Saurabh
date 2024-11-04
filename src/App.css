@@ -2,17 +2,17 @@
 :root {   
   --background-color: linear-gradient(to bottom, #041E22, #171717); /* Updated gradient background */
   --text-color: #ffffff; /* Dark text color */
-  --navbar-bg: #333; /* Dark navbar background */
+  --navbar-bg: #021412; /* Dark navbar background */
   --navbar-color: #ffffff; /* Dark navbar text color */
   --card-bg: #022c2c; /* Dark mode card background */
 }
 
 /* Light Mode Theme */
 .light-mode {
-  --background-color: #ffffff; /* Light mode background */
+  --background-color: #f8f8f8; /* Light mode background */
   --text-color: #011012; /* Light mode text color */
-  --navbar-bg: #f7ecd7; /* Navbar background in light mode */
-  --navbar-color: #011012; /* Navbar text color in light mode */
+  --navbar-bg: #eaeae1; /* Navbar background in light mode */
+  --navbar-color: #031311; /* Navbar text color in light mode */
   --card-bg: #BFC8C7; /* Light mode card background */
 }
 
