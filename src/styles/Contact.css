@@ -1,9 +1,20 @@
+:root {
+    --input-background: #ffffff; /* White input fields */
+    --input-border: #d1d5db; /* Light gray border for inputs */
+}
+
+/* Dark Mode Colors */
+[data-theme='dark'] {
+    --input-background: #1e293b; /* Darker input fields */
+    --input-border: #4b5563; /* Darker border for inputs */
+}
+
 /* Container for the form */
-.contact-wrapper {
+.contact-wrapper { 
+   
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ffffff;
 }
 
 .name-inputs-container {
@@ -22,7 +33,7 @@
     width: 100%;
     max-width: 600px; /* Adjust for screen responsiveness */
     padding: 20px;
-    background-color: #dedede;
+   
     border-radius: 1rem;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -35,12 +46,12 @@
 /* Form heading */
 .contact-heading {
     font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #333;
+    /* Use gradient for dark mode */
+    color: var(--text-color);
+   
 }
 
 .contact-subtext {
-    color: #4b5563;
     font-size: 1rem;
     margin-bottom: 1.5rem;
 }
@@ -50,7 +61,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 1rem;
+    margin-bottom: .3rem;
     width: 100%;
 }
 
@@ -58,7 +69,6 @@
 .contact-label {
     margin-bottom: 0.5rem;
     font-weight: 600;
-    color: #4b5563;
 }
 
 /* Input fields styling */
@@ -66,16 +76,16 @@
     width: 100%; /* Use full width */
     padding: 0.75rem;
     font-size: 1rem;
-    border: 1px solid #d1d5db;
-    background-color: #f9fafb;
+    border: 1px solid var(--input-border); /* Use the variable for border */
+    background-color: var(--input-background); /* Use the variable for background */
     border-radius: 0.5rem;
     transition: border-color 0.3s ease;
     box-sizing: border-box;
 }
 
 .input:focus {
-    border-color: #6366f1;
-    box-shadow: 0 0 5px rgba(99, 102, 241, 0.3);
+    border-color: #051b23;
+    box-shadow: 0 0 5px rgba(5, 23, 29, 0.3);
 }
 
 /* Text area styling for message */
@@ -91,7 +101,6 @@
     font-weight: 700;
     color: white;
     background-color: #011012;
-    
     border-radius: 0.5rem;
     transition: background-color 0.3s ease;
     cursor: pointer;
@@ -163,7 +172,8 @@
     max-width: 600px; /* Capped width for larger screens */
     width: 65%;
     max-height: 83vh; /* Cap height for smaller screens */
-    background-color: white;
+    background: var(--background-color); /* Use gradient for dark mode */
+    color: var(--text-color);
     padding: 2.5rem;
     border-radius: 1rem;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);

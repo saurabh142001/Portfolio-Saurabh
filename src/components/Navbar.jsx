@@ -12,7 +12,7 @@ const Navbar = ({ toggleTheme, isDarkMode, openModal }) => {
   return (
     <nav className="navbar bg-gradient-to-tl from-emerald-900 to-neutral-900">
       <div className="navbar-container">
-        <h1 className="logo ">SJ</h1>
+        <h1 className="logo  ">Saurabh</h1>
 
         {/* Hamburger Icon */}
         <div className="menu-icon" onClick={toggleMenu}>
@@ -34,7 +34,7 @@ const Navbar = ({ toggleTheme, isDarkMode, openModal }) => {
           <a onClick={openModal} className="contact-button">
             Contact Us
           </a>
-          <li>
+          {/* <li>
             <a
               href="https://github.com/yourusername"
               target="_blank"
@@ -42,7 +42,7 @@ const Navbar = ({ toggleTheme, isDarkMode, openModal }) => {
             >
               Resume
             </a>
-          </li>
+          </li> */}
         </ul>
 
         {/* Theme Toggle Button */}

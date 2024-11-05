@@ -15,18 +15,46 @@
     transition: opacity 0.3s ease, transform 0.3s ease; /* Add transition here */
 }
 
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .projects-container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust to 300px min width */
+        padding: 2rem; /* Reduce padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-container {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); /* Use full width for very small screens */
+        padding: 1rem; /* Further reduce padding */
+    }
+}
+
 .project-card {
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Ensure card transitions are smooth */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Ensure card transitions are smooth */
     opacity: 0; /* Start with cards hidden */
     transform: translateY(10px); /* Slightly translate the cards down */
+    animation: slide-in 0.5s ease forwards; /* Add animation for sliding in */
 }
 
 .project-card.visible { /* Class to apply when the card is visible */
     opacity: 1; /* Fade in effect */
     transform: translateY(0); /* Move back to original position */
+}
+
+/* Keyframes for slide-in animation */
+@keyframes slide-in {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .show-more, .show-less {

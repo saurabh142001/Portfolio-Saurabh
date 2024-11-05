@@ -24,7 +24,7 @@ const Profile = () => {
         <div className={`profile-content ${loaded ? "animate" : ""}`}>
           <h1 className={`profile-title ${loaded ? "animate" : ""}`}>
             Designing Success, One{" "}
-            <span className="highlight animated-gradient">Portfolio</span> at a
+            <span className="highlight animated-gradient">Solution</span> at a
             Time
           </h1>
           <p className={`profile-text ${loaded ? "animate" : ""}`}>

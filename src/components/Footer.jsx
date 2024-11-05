@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="social-media-section">
           <div className="social-icons">
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/saurabh142001"
               aria-label="GitHub"
               target="_blank"
               rel="noopener noreferrer"
@@ -16,7 +16,7 @@ const Footer = () => {
               <i className="fab fa-github"></i>
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/saurabh-kumar-5b8b4920a/"
               aria-label="LinkedIn"
               target="_blank"
               rel="noopener noreferrer"

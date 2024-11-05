@@ -1,7 +1,7 @@
 /* Default (Dark Mode) Theme */
 :root {   
   --background-color: linear-gradient(to bottom, #041E22, #171717); /* Updated gradient background */
-  --text-color: #ffffff; /* Dark text color */
+  --text-color: #e3f9ff; /* Dark text color */
   --navbar-bg: #021412; /* Dark navbar background */
   --navbar-color: #ffffff; /* Dark navbar text color */
   --card-bg: #022c2c; /* Dark mode card background */
@@ -76,4 +76,17 @@ body {
   100% {
     background-position: 0% 50%;
   }
+}
+/* Light Mode Colors */
+:root {
+
+  --input-background: #ffffff; /* White input fields */
+  --input-border: #d1d5db; /* Light gray border for inputs */
+}
+
+/* Dark Mode Colors */
+[data-theme='dark'] {
+
+  --input-background: #1e293b; /* Darker input fields */
+  --input-border: #4b5563; /* Darker border for inputs */
 }
