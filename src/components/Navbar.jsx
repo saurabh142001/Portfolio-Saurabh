@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../styles/Navbar.css"; // Import your CSS file for styling
 import ToggleButton from "./Button"; // Import the ToggleButton component
 
-const Navbar = ({ toggleTheme, isDarkMode, openModal }) => {
+const Navbar = ({ toggleTheme, isDarkMode, openModal, openAddLinkModal }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -12,7 +12,7 @@ const Navbar = ({ toggleTheme, isDarkMode, openModal }) => {
   return (
     <nav className="navbar bg-gradient-to-tl from-emerald-900 to-neutral-900">
       <div className="navbar-container">
-        <h1 className="logo  ">Saurabh</h1>
+        <h1 className="logo">Saurabh</h1>
 
         {/* Hamburger Icon */}
         <div className="menu-icon" onClick={toggleMenu}>
@@ -31,18 +31,16 @@ const Navbar = ({ toggleTheme, isDarkMode, openModal }) => {
               Projects
             </a>
           </li>
-          <a onClick={openModal} className="contact-button">
-            Contact Us
-          </a>
-          {/* <li>
-            <a
-              href="https://github.com/yourusername"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Resume
+          <li>
+            <a onClick={openModal} className="contact-button">
+              Contact Us
             </a>
-          </li> */}
+          </li>
+          <li>
+            <a onClick={openAddLinkModal} className="add-link-button">
+              Add Link
+            </a>
+          </li>
         </ul>
 
         {/* Theme Toggle Button */}
